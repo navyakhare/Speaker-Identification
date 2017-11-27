@@ -1,7 +1,6 @@
 #!/usr/bin/env python2
 # -*- coding: UTF-8 -*-
 
-
 import time
 #import scikits.talkbox as tb
 from scikits.talkbox.linpred import levinson_lpc
