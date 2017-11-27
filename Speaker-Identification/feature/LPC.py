@@ -38,8 +38,7 @@ class LPCExtractor(object):
     def lpcc(self, signal):
         lpc = levinson_lpc.lpc(signal, self.n_lpc)[0]
         return lpc[1:]
-        #lpcc = self.lpc_to_cc(lpc)
-        #return lpcc
+
 
     def extract(self, signal):
         frames = (len(signal) - self.FRAME_LEN) / self.FRAME_SHIFT + 1
@@ -53,6 +52,7 @@ class LPCExtractor(object):
         feature = array(feature)
         feature[isnan(feature)] = 0
         return feature
+
 
 @cached_func
 def get_lpc_extractor(fs, win_length_ms=32, win_shift_ms=16,
